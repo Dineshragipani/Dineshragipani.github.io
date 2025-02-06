@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script>
+        function f1(){
+            let v=document.getElementById("name").value
+            //alert(v)
+            //msg.innerHTML=v
+            if(v<40){
+                msg.innerHTML="better luck next time"
+            }else{
+                msg.innerHTML="Good"
+            }
+        }
+
+    </script>
 </head>
 <body>
-    
+    <input type="number" id="name">
+    <button onclick="f1()">Submit</button>
+    <hr>
+    <div id="msg"></div>
 </body>
 </html>

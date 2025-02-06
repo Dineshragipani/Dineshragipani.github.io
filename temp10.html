@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container{
+            text-align: center;
+            width: 400px;
+            height: 219px;
+            border-radius: 15px;
+            padding-left: 35%;
+                        
+        }
+        .box{
+            border: 2px solid silver;
+            padding: 2%;
+            height: 250px;
+            border-radius: 5px; 
+            width: 130%;
+            background-color: rgb(204, 194, 194);
+        }
+        button{
+            padding: 0.2%;
+            border: 2px;
+            width: 100%;
+            height: 90%;
+            background: blue;
+            border-radius: 5px;
+            font-size: xx-large;
+            
+        }
+        input{
+            padding: 20px;
+            width: 90%;
+            border-radius: 5px;
+            font-size: large;
+        }
+    </style>
+    <script>
+        function f1(){
+            let m=document.getElementById("email").value;
+            let pwd=document.getElementById("password").value;
+            if(m=="" || pwd==""){
+                msg.innerHTML="email or password cannot be blank";
+            }
+            else if(m !=="john@gmail.com"|| pwd !== "1234"){
+                msg.innerHTML="Access Denied";
+                //alert("invalid email!!!");
+            }
+            else{
+                msg.innerHTML="Welcome John!";
+            }
+        }
+    </script>
+</head>
+<body>
+    <!-- <input type="number" id="score" placeholder="Enter score">
+    <button onclick="f1()">Submit</button>
+    <hr>
+    <div id="msg"></div> -->
+    <div class='container'> 
+        <div class="box">   
+            <div id="msg">
+                <center>
+                    <p><input type="email" required id ="email" placeholder="Email address or phone number"><br></p>
+                    <p><input type="password" required id="password" placeholder="Password"><br></p>
+                    <Button onclick="f1()">Login</Button>
+                </center>
+            </div>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function details(){
+            let name=document.getElementById("name").value;
+            let email=document.getElementById("email").value;
+            let pass=document.getElementById("pass").value;
+            let date=document.getElementById("date").value;
+            data.innerHTML=`${name},${email},${pass},${date}`
+        }
+    </script>
+</head>
+<body>
+    <p>New User Signup form</p>
+    <p></p><input type="text" id="name"></p>
+    <p><input type="text" id="email"></p>
+    <p><input type="password" id="pass"></p>
+    <p><input type="date" id="date"></p>
+    <p><button onclick="details()">Register</button></p>
+    <div id="data"></div>
+</body>
+</html>

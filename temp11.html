@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function details(){
+            let a=document.getElementById("name").value;
+            let b=document.getElementById("age").value;
+            let c=document.getElementById("qualification").value;
+            let d=document.getElementById("place").value;
+            msg.innerHTML=`${a}|${b}|${c}|${d}`;
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text" id="name"><br>
+    <input type="Number" id="age"><br>
+    <input type="text" id="qualification"><br>
+    <input type="text" id="place"><br>
+    <button onclick="details()">Submit</button>
+    <div id="msg"></div>
+</body>
+</html>

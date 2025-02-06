@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function showData(){
+            let email=document.getElementById("email").value;
+            let pass=document.getElementById("password").value;
+            Data.innerHTML=`${email},${pass}`
+        }
+    </script>
+</head>
+<body>
+    <p></p><input type="text" id="email" placeholder="Emil Address"></p>
+    <p><input type="text" id="password" placeholder="Password"></p>
+    <p><button onclick="showData()">Login</button></p>
+    <div id="Data"></div>
+</body>
+</html>

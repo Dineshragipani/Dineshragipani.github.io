@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function calc(){
+            let x=Number(document.getElementById("num1").value);
+            let y=Number(document.getElementById("num2").value);
+            let str=`${x}+${y}=${x+y}<br>`;
+            str=str+`${x}-${y}=${x-y}<br>`;
+            str=str+`${x}*${y}=${x*y}<br>`;
+            str=str+`${x}/${y}=${x/y}<br>`;
+            d1.innerHTML=str;
+        }
+    </script>
+</head>
+<body>
+    
+        <input type="number" id="num1"><br><br>
+        <input type="number" id="num2"><br><br>
+        <button onclick="calc()">Submit</button>
+        <div id="d1"></div>
+</body>
+</html>
