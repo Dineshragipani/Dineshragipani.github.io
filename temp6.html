@@ -12,9 +12,29 @@
       ];
       const cart = {};
       const addToCart = (id) => {
+        // const score = {};
+        // score["maths"] = 95;
+        // score["maths"] = score["maths"] + 2
+        // console.log(score);
         cart[id] = 1;
+        showCart();
+      };
+      const increment = (id) => {
+        cart[id] = cart[id] + 1;
+        showCart();
+      };
+      const decrement = (id) => {
+        cart[id] = cart[id] - 1;
+        cart[id] < 1 && delete cart[id];
         console.log(cart);
         showCart();
+      };
+      const showTotal = () => {
+        let total = products.reduce((sum, value) => {
+          return sum + value.price * (cart[value.id] ? cart[value.id] : 0);
+        }, 0);
+
+        divTotal.innerHTML = `Order Value: $${total}`;
       };
 
       const showCart = () => {
@@ -22,11 +42,18 @@
         products.map((value) => {
           if (cart[value.id]) {
             str += `
-            <li>${value.name}-$${value.price}-<button>-</button>${cart[value.id]}<button>+</button>-${value.price*cart[value.id]}</li>
+            <li>${value.name}-$${value.price}-<button onclick='decrement(${
+              value.id
+            })'>-</button>${cart[value.id]}<button onclick='increment(${
+              value.id
+            })'>+</button>-$${value.price * cart[value.id]}</li>
             `;
           }
         });
         divCart.innerHTML = str;
+        let count = Object.keys(cart).length;
+        items.innerHTML = count;
+        showTotal();
       };
       const showProducts = () => {
         let str = "";
@@ -41,10 +68,15 @@
   </head>
   <body onload="showProducts()">
     <h1>My Store</h1>
+    <h4>Cart:<span id="items"></span></h4>
     <hr />
     <h3>Products</h3>
     <div id="divProducts"></div>
-    <h3>My Cart</h3>
-    <div id="divCart"></div>
+    <div id="'dicCartBlock" style="display:none">    
+      <h3>My Cart</h3>
+      <div id="divCart"></div>
+      <hr/>
+     <div id="divTotal"></div>
+    </div>
   </body>
 </html>
