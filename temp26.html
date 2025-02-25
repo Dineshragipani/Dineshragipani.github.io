@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <img src="assets/ball.png" id="ball" width="100px"  />
+    <img src="assets/bucket.jpg" id="bucket" width="100px"  />
+    <h3 align="right">Score:<div id="score"></div></h3>
+    </div>
+    <script>
+        //ball.style.position="absolute";
+        //ball.style.top="50px";
+        //ball.style.left="50px";
+
+        ball.style.position="absolute";
+        bucket.style.position="absolute";
+        let sc=0;
+        let t=0;
+        let l=0;
+        let bt=500;
+        let bl=0;
+        function f1(){
+            t++;
+            ball.style.top=t+"px";
+            ball.style.left=l+"px";
+            if(t<500){
+                setTimeout(f1,10);
+            }
+            else{
+                t=1;
+                l=Math.random()*500;
+                f1();
+            }
+        }
+        f1();
+        bucket.style.top=bt+"px";
+        bucket.style.left=bl+"px";
+        let b=document.body;
+        b.onkeydown=
+        b.onkeyup=function handle(e){
+            if(e.key=="ArrowLeft")bl-=5;
+            if(e.key=="ArrowUp")bt-=10;
+            if(e.key=="ArrowRight")bl+=10;
+            if(e.key=="ArrowDown")bt+=10;
+            bucket.style.left=bl+"px";
+            bucket.style.top=bt+"px";
+        }
+        if(ball.style.left==bucket.style.top && bucket.style.top==ball.style.left){
+            sc++;
+            score.innerHTML=sc;
+        }
+    </script>
+</body>
+</html>
