@@ -10,7 +10,7 @@
   }
 
   .header-row {
-    background-color: orange;
+    background-color: lightgrey;
     display: flex;
     justify-content: space-between;
     align-items: center;
